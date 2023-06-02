@@ -7,12 +7,10 @@
  
                João Pedro Fontinele,
 
-               João Victor Maia,
-
-               Matheus Pilotto,
-
-               Sérgio Ricardo Varella,
+               Matheus Pilotto, 
 
                Valter Neto,
+               
+               Fillipi Cunha
                
                Rodrigo Ribeiro.

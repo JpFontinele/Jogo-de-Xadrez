@@ -1,6 +1,6 @@
 import pygame
 from modules.board import *
-
+from modules.oponent import *
 
 #Tela
 pygame.display.set_caption("jogo de xadrez")
@@ -169,6 +169,49 @@ while running:
                 elif (clickedSprites[0].y, clickedSprites[0].x) == tile:
                     clickedSprites[0].unsethighlighted()
                     selected = False
+
+
+        elif player == 'black':
+            roundWhite = False
+            value, move = minimax(board, 3, float(
+                "-inf"), float("inf"), True, trans_table)
+
+            if value == float("-inf") and move == 0:
+                print("AI checkmate")
+                player = 'white'
+                running = False
+
+            else:
+                start = move[0]
+                end = move[1]
+                piece = board.array[start[0]][start[1]]
+                dest = board.array[end[0]][end[1]]
+
+                piecePromotion = board.movePiece(piece, end[0], end[1])
+                if piecePromotion:
+                    allSpritesList.add(piecePromotion[0])
+                    sprites.append(piecePromotion[0])
+                    allSpritesList.remove(piecePromotion[1])
+                    sprites.remove(piecePromotion[1])
+
+                if dest:
+                    allSpritesList.remove(dest)
+                    sprites.remove(dest)
+                    board.score += board.pieceValues[type(dest)]
+
+                player = 'white'
+                attacked = generatePossibleMoves(board, "black", True)
+                if (board.whiteKing.y, board.whiteKing.x) in attacked:
+                    checkWhite = True
+                else:
+                    checkWhite = False
+
+            if value == float("inf"):
+                print("Player checkmate")
+                running = False
+                player = 'AI'
+    
+
     allSpritesList = pygame.sprite.Group()
     sprites = [piece for row in board.array for piece in row if piece]
     allSpritesList.add(sprites)
