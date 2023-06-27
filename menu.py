@@ -20,7 +20,10 @@ pygame.display.set_caption("Jogo de Xadrez")
 imagem = pygame.image.load("assets/fundo/telaMenu.png")  # Substitua "imagem.png" pelo caminho para sua imagem
 
 # Botão "Jogar"
-botao_jogar = pygame.Rect(largura // 2 - 50, altura - 100, 100, 50)
+botao_jogar = pygame.Rect(largura // 2 - 50, altura - 150, 100, 50)
+
+# Botão "Jogar com um amigo"
+botao_jogar_amigo = pygame.Rect(largura // 2 - 110, altura - 80, 220, 50)
 
 # Loop principal do jogo
 while True:
@@ -32,13 +35,15 @@ while True:
         elif event.type == pygame.MOUSEBUTTONDOWN:
             if botao_jogar.collidepoint(event.pos):
                 # Redirecionar para o jogo.py
-                exec(open("jogo.py").read()) 
+                exec(open("jogo.py").read())
+            elif botao_jogar_amigo.collidepoint(event.pos):
+                # Redirecionar para o jogo com um amigo
+                exec(open("jogo_amigo.py").read())  # Substitua "jogo_amigo.py" pelo arquivo que corresponde ao jogo com um amigo
 
     # Preencher a tela com a cor branca
     tela.fill(BRANCO)
 
-    # Desenhar a imagem: 
-   
+    # Desenhar a imagem
     tela.blit(imagem, (0, 0))
 
     # Desenhar o botão "Jogar"
@@ -47,6 +52,12 @@ while True:
     texto = fonte.render("Jogar", True, BRANCO)
     texto_rect = texto.get_rect(center=botao_jogar.center)
     tela.blit(texto, texto_rect)
+
+    # Desenhar o botão "Jogar com um amigo"
+    pygame.draw.rect(tela, PRETO, botao_jogar_amigo)
+    texto_amigo = fonte.render("Jogar com um amigo", True, BRANCO)
+    texto_amigo_rect = texto_amigo.get_rect(center=botao_jogar_amigo.center)
+    tela.blit(texto_amigo, texto_amigo_rect)
 
     # Atualizar a tela
     pygame.display.flip()

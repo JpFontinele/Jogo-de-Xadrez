@@ -1,4 +1,5 @@
 import pygame
+import time
 from modules.board import *
 from modules.oponent import *
 
@@ -134,10 +135,10 @@ while running:
                         # different sidemenus depend on whether or not you're
                         # currently in check
                         if checkWhite:
-                            pygame.display.update()
+                            #pygame.display.update()
                             pygame.time.wait(1000)
                         else:
-                            pygame.display.update()
+                            #pygame.display.update()
                             pygame.time.wait(1000)
 
 

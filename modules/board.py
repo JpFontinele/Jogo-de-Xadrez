@@ -107,3 +107,20 @@ class Board:
                 self.array[piece.y-1][piece.x] = None
         else:
             self.specialMove(piece,y,x,special)
+
+    def isCheckmate(self, color):
+        king = self.whiteKing if color == 'white' else self.blackKing
+        king_pos = (king.y, king.x)
+
+        # Verificar se o rei está em xeque
+        if self.isKingInCheck(king_pos, color):
+            # Verificar se não há movimentos legais disponíveis para o jogador
+            for row in self.array:
+                for piece in row:
+                    if piece is not None and piece.color == color:
+                        legal_moves = piece.genLegalMoves(self)
+                        if legal_moves:
+                            return False
+            return True
+        else:
+            return False
