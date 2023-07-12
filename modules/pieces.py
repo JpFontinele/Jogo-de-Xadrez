@@ -109,7 +109,7 @@ class Pawn(Piece):
     def __init__(self, color, y, x):
         super().__init__(color, y, x)
         self.symbol = "P"
-        self.sprite = pygame.image.load("assets/pecas/{}_Pawn.png".format(self.color))
+        self.sprite = pygame.image.load("assets/pecas/{}_pawn.png".format(self.color))
         self.sprite = pygame.transform.scale(self.sprite, (50, 50))
         self.image.blit(self.sprite, (5, 5))
 
@@ -121,7 +121,7 @@ class Pawn(Piece):
             self.image.blit(self.sprite, (5, 5))
         else:
             self.sprite = pygame.image.load(
-                "assets/pecas/{}_Pawn.png".format(self.color)).convert_alpha()
+                "assets/pecas/{}_pawn.png".format(self.color)).convert_alpha()
             self.sprite = pygame.transform.scale(self.sprite, (50, 50))
             self.image.blit(self.sprite, (5, 5))
 
@@ -171,7 +171,7 @@ class Rook(Piece):
             self.image.blit(self.sprite, (5, 5))
         else:
             self.sprite = pygame.image.load(
-                "assets/pecas/{}_Rook.png".format(self.color))
+                "assets/pecas/{}_rook.png".format(self.color))
             self.sprite = pygame.transform.scale(self.sprite, (50, 50))
             self.image.blit(self.sprite, (5, 5))
 
@@ -184,7 +184,7 @@ class Bishop(Piece):
     def __init__(self, color, y, x):
         super().__init__(color, y, x)
         self.sprite = pygame.image.load(
-            "assets/pecas/{}_Bishop.png".format(self.color))
+            "assets/pecas/{}_bishop.png".format(self.color))
         self.sprite = pygame.transform.scale(self.sprite, (50, 50))
         self.symbol = "Black"
         self.image.blit(self.sprite, (5, 5))
@@ -197,7 +197,7 @@ class Bishop(Piece):
             self.image.blit(self.sprite, (5, 5))
         else:
             self.sprite = pygame.image.load(
-                "assets/pecas/{}_Bishop.png".format(self.color))
+                "assets/pecas/{}_bishop.png".format(self.color))
             self.sprite = pygame.transform.scale(self.sprite, (50, 50))
             self.image.blit(self.sprite, (5, 5))
 
@@ -210,7 +210,7 @@ class Knight(Piece):
     def __init__(self, color, y, x):
         super().__init__(color, y, x)
         self.sprite = pygame.image.load(
-            "assets/pecas/{}_Knight.png".format(self.color))
+            "assets/pecas/{}_knight.png".format(self.color))
         self.sprite = pygame.transform.scale(self.sprite, (50, 50))
         self.symbol = "N"
         self.image.blit(self.sprite, (5, 5))
@@ -223,7 +223,7 @@ class Knight(Piece):
             self.image.blit(self.sprite, (5, 5))
         else:
             self.sprite = pygame.image.load(
-                "assets/pecas/{}_Knight.png".format(self.color))
+                "assets/pecas/{}_knight.png".format(self.color))
             self.sprite = pygame.transform.scale(self.sprite, (50, 50))
             self.image.blit(self.sprite, (5, 5))
 
@@ -245,7 +245,7 @@ class Knight(Piece):
 class King(Piece):
     def __init__(self, color, y, x):
         super().__init__(color, y, x)
-        self.sprite = pygame.image.load("assets/pecas/{}_King.png".format(self.color))
+        self.sprite = pygame.image.load("assets/pecas/{}_king.png".format(self.color))
         self.sprite = pygame.transform.scale(self.sprite, (50, 50))
         self.symbol = "K"
         self.image.blit(self.sprite, (5, 5))
@@ -259,7 +259,7 @@ class King(Piece):
             self.image.blit(self.sprite, (5, 5))
         else:
             self.sprite = pygame.image.load(
-                "assets/pecas/{}_King.png".format(self.color))
+                "assets/pecas/{}_king.png".format(self.color))
             self.sprite = pygame.transform.scale(self.sprite, (50, 50))
             self.image.blit(self.sprite, (5, 5))
 
@@ -282,7 +282,7 @@ class Queen(Piece):
     def __init__(self, color, y, x):
         super().__init__(color, y, x)
         self.sprite = pygame.image.load(
-            "assets/pecas/{}_Queen.png".format(self.color))
+            "assets/pecas/{}_queen.png".format(self.color))
         self.sprite = pygame.transform.scale(self.sprite, (50, 50))
         self.symbol = "Q"
         self.image.blit(self.sprite, (5, 5))
@@ -295,7 +295,7 @@ class Queen(Piece):
             self.image.blit(self.sprite, (5, 5))
         else:
             self.sprite = pygame.image.load(
-                "assets/pecas/{}_Queen.png".format(self.color))
+                "assets/pecas/{}_queen.png".format(self.color))
             self.sprite = pygame.transform.scale(self.sprite, (50, 50))
             self.image.blit(self.sprite, (5, 5))
 
